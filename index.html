@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Infoldat | Steuern, Zuschüsse & strukturierte Vorbereitung</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+
+<nav>
+  <a href="index.html">Start</a>
+  <a href="steuerthemen.html">Steuerthemen</a>
+  <a href="zuschuesse.html">Zuschüsse</a>
+  <a href="pdf.html">Kostenlose PDF</a>
+  <a href="kontakt.html">Kontakt / Einschreiben</a>
+</nav>
+
+<section class="hero hero-image">
+  <div class="hero-content">
+    <h1>Infoldat</h1>
+    <p>
+      Steuerliche Themen, Zuschüsse & Förderungen – verständlich erklärt.<br>
+      Für Bundeswehr-nahe, öffentlichen Dienst, sicherheitsnahe Berufe – und alle, die Klarheit wollen.
+    </p>
+    <p class="small">
+      Ziel: weniger Chaos, mehr Überblick. No fluff.
+    </p>
+  </div>
+</section>
+
+<section class="section">
+  <h2>Was du hier bekommst</h2>
+
+  <div class="grid">
+    <div class="box">
+      <h3>Steuerthemen</h3>
+      <p>Aktuelle Infos, einfach erklärt – damit du weißt, was relevant ist und was nicht.</p>
+      <a href="steuerthemen.html">Zu Steuerthemen →</a>
+    </div>
+
+    <div class="box">
+      <h3>Zuschüsse & Förderungen</h3>
+      <p>Übersichten zu relevanten Förderungen – strukturiert, mit Einstiegspunkten.</p>
+      <a href="zuschuesse.html">Zu Zuschüssen →</a>
+    </div>
+
+    <div class="box">
+      <h3>Strukturierte Vorbereitung</h3>
+      <p>Checklisten, Ablauf-Logik, Prioritäten – damit du einen Plan hast.</p>
+      <a href="kontakt.html">Einschreiben & Zugang →</a>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <h2>Warum Infoldat</h2>
+  <ul>
+    <li><strong>Verständlich:</strong> kurze Erklärungen statt Paragraphen-Wüste</li>
+    <li><strong>Strukturiert:</strong> Überblick → nächste Schritte → Umsetzung</li>
+    <li><strong>Community-Ansatz:</strong> Austausch & Verbesserungen durch Feedback</li>
+    <li><strong>Praxisfokus:</strong> Was bringt dir wirklich was?</li>
+  </ul>
+
+  <p class="small">
+    Hinweis: Keine Steuerberatung im rechtlichen Sinn. Infos zur Orientierung – für verbindliche Auskünfte bitte Profis/Behörden.
+  </p>
+</section>
+
+<section class="section">
+  <h2>Einschreiben</h2>
+  <p>
+    Trag dich ein, wenn du Updates zu Steuerthemen, Zuschüssen und (später) kostenlosen PDFs bekommen willst.
+  </p>
+
+  <!-- NETLIFY FORM (LEAD) -->
+  <form name="einschreiben" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" action="/danke.html">
+    <input type="hidden" name="form-name" value="einschreiben">
+    <p style="display:none;">
+      <label>Don’t fill this out: <input name="bot-field"></label>
+    </p>
+
+    <p>
+      <label><strong>Name (optional)</strong></label><br>
+      <input type="text" name="name" placeholder="Dein Name">
+    </p>
+
+    <p>
+      <label><strong>E-Mail</strong></label><br>
+      <input type="email" name="email" placeholder="deinname@mail.de" required>
+    </p>
+
+    <p>
+      <label><strong>Bezug (optional)</strong></label><br>
+      <select name="bezug">
+        <option value="(leer)">Bitte auswählen</option>
+        <option>Bundeswehr</option>
+        <option>Öffentlicher Dienst</option>
+        <option>Sicherheitsnaher Beruf</option>
+        <option>Interessiert / Privat</option>
+      </select>
+    </p>
+
+    <p>
+      <label>
+        <input type="checkbox" name="updates_ok" required>
+        <strong>Ja, ich will Updates von Infoldat erhalten.</strong>
+      </label>
+    </p>
+
+    <button type="submit">Jetzt einschreiben</button>
+    <p class="small">Du kannst dich jederzeit wieder abmelden.</p>
+  </form>
+</section>
+
+<section class="section">
+  <h2>Social</h2>
+  <p>Folge uns für kurze Updates & Hinweise:</p>
+  <ul>
+    <li><a href="#" target="_blank" rel="noopener">Instagram (kommt / Link einfügen)</a></li>
+    <li><a href="#" target="_blank" rel="noopener">TikTok (kommt / Link einfügen)</a></li>
+    <li><a href="#" target="_blank" rel="noopener">YouTube (optional / Link einfügen)</a></li>
+  </ul>
+</section>
+
+<footer>
+  © 2026 Infoldat
+  <div class="disclaimer">
+    Keine offizielle staatliche Website. Informationsplattform.
+  </div>
+</footer>
+
+</body>
+</html>

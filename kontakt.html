@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kontakt / Einschreiben | Infoldat</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+
+<nav>
+  <a href="index.html">Start</a>
+  <a href="steuerthemen.html">Steuerthemen</a>
+  <a href="zuschuesse.html">Zuschüsse</a>
+  <a href="pdf.html">Kostenlose PDF</a>
+  <a href="kontakt.html">Kontakt / Einschreiben</a>
+</nav>
+
+<section class="hero hero-image">
+  <div class="hero-content">
+    <h1>Kontakt / Einschreiben</h1>
+    <p>Ein Formular. Ein sauberer Einstieg. Let’s go.</p>
+  </div>
+</section>
+
+<section class="section">
+  <h2>Wofür ist das?</h2>
+  <ul>
+    <li>Fragen / Feedback zu Steuern & Zuschüssen</li>
+    <li>Updates & neue Inhalte automatisch bekommen</li>
+    <li>Community mit aufbauen (Hinweise, Themenwünsche)</li>
+  </ul>
+</section>
+
+<section class="section">
+  <h2>Formular</h2>
+
+  <!-- NETLIFY FORM -->
+  <form name="kontakt" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" action="/danke.html">
+    <input type="hidden" name="form-name" value="kontakt">
+    <p style="display:none;">
+      <label>Don’t fill this out: <input name="bot-field"></label>
+    </p>
+
+    <p>
+      <label><strong>Name (optional)</strong></label><br>
+      <input type="text" name="name" placeholder="Dein Name">
+    </p>
+
+    <p>
+      <label><strong>E-Mail</strong></label><br>
+      <input type="email" name="email" placeholder="deinname@mail.de" required>
+    </p>
+
+    <p>
+      <label><strong>Telefon (optional)</strong></label><br>
+      <input type="tel" name="phone" placeholder="+49 170 1234567">
+    </p>
+
+    <p>
+      <label><strong>Bezug (optional)</strong></label><br>
+      <select name="bezug">
+        <option value="(leer)">Bitte auswählen</option>
+        <option>Bundeswehr</option>
+        <option>Öffentlicher Dienst</option>
+        <option>Sicherheitsnaher Beruf</option>
+        <option>Interessiert / Privat</option>
+      </select>
+    </p>
+
+    <p>
+      <label><strong>Worum geht’s?</strong></label><br>
+      <select name="thema" required>
+        <option value="" disabled selected>Bitte auswählen</option>
+        <option>Steuerthemen</option>
+        <option>Zuschüsse / Förderungen</option>
+        <option>Strukturierte Vorbereitung</option>
+        <option>Feedback / Fehler</option>
+        <option>Idee / Vorschlag</option>
+      </select>
+    </p>
+
+    <p>
+      <label><strong>Nachricht</strong></label><br>
+      <textarea name="message" rows="6" required placeholder="Schreib kurz und konkret, worum es geht."></textarea>
+    </p>
+
+    <p>
+      <label>
+        <input type="checkbox" name="updates_ok" required>
+        <strong>Ja, ich will, dass Infoldat mich zu Updates kontaktieren darf.</strong>
+      </label>
+    </p>
+
+    <button type="submit">Absenden</button>
+
+    <p class="small">
+      Hinweis: Keine Steuerberatung im rechtlichen Sinn. Wir geben Orientierung & Struktur.
+    </p>
+  </form>
+</section>
+
+<section class="section">
+  <h2>Social</h2>
+  <ul>
+    <li><a href="#" target="_blank" rel="noopener">Instagram (Link einfügen)</a></li>
+    <li><a href="#" target="_blank" rel="noopener">TikTok (Link einfügen)</a></li>
+    <li><a href="#" target="_blank" rel="noopener">YouTube (optional)</a></li>
+  </ul>
+</section>
+
+<footer>
+  © 2026 Infoldat
+  <div class="disclaimer">Keine offizielle staatliche Website. Informationsplattform.</div>
+</footer>
+
+</body>
+</html>
