@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kontakt | Infoldat</title>
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+
+<nav>
+    <a href="index.html">Start</a>
+    <a href="Mission.html">Mission</a>
+    <a href="vorbereitung/index.html">Vorbereitung</a>
+    <a href="tests.html">Tests</a>
+    <a href="kontakt.html">Kontakt</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero hero-image">
+    <div class="hero-content">
+        <h1>Kontakt</h1>
+        <p>
+            Community aufbauen. Austausch ermöglichen. Inhalte verbessern.
+        </p>
+    </div>
+</section>
+
+<!-- INFO -->
+<section class="section">
+    <h2>Warum du uns schreiben kannst</h2>
+
+    <p>
+        Infoldat ist keine offizielle Stelle, sondern eine Plattform
+        für Austausch, ehrliche Vorbereitung und realistische Einordnung.
+    </p>
+
+    <ul>
+        <li>Fragen zu Ablauf, Phasen, Ausrüstung, Packliste oder Mental</li>
+        <li>Eigene Erfahrungen, die anderen helfen</li>
+        <li>Hinweise auf Fehler oder fehlende Infos</li>
+        <li>Ideen für neue Inhalte</li>
+    </ul>
+</section>
+
+<!-- FORMULAR -->
+<section class="section">
+    <h2>Kontaktformular</h2>
+
+    <p class="small">
+        Das Formular funktioniert direkt online.
+        Nach dem Absenden landet deine Nachricht bei uns.
+    </p>
+
+    <div class="grid">
+        <div class="box">
+
+            <!-- NETLIFY FORM -->
+            <form name="kontakt" method="POST" data-netlify="true">
+                <input type="hidden" name="form-name" value="kontakt">
+
+                <p>
+                    <label><strong>Name (optional)</strong></label><br>
+                    <input type="text" name="name" placeholder="z. B. Niklas"
+                    style="width:100%; padding:10px; margin-top:8px;">
+                </p>
+
+                <p>
+                    <label><strong>Telefonnummer (optional)</strong></label><br>
+                    <input type="tel" name="phone" placeholder="+49 170 1234567"
+                    style="width:100%; padding:10px; margin-top:8px;">
+                </p>
+
+                <p>
+                    <label><strong>Thema</strong></label><br>
+                    <select name="thema" style="width:100%; padding:10px; margin-top:8px;">
+                        <option>Allgemein</option>
+                        <option>Ablauf</option>
+                        <option>Phasen</option>
+                        <option>Ausrüstung</option>
+                        <option>Packliste</option>
+                        <option>Mental</option>
+                        <option>Tests</option>
+                        <option>Fehler / Korrektur</option>
+                        <option>Idee / Vorschlag</option>
+                    </select>
+                </p>
+
+                <p>
+                    <label><strong>Nachricht</strong></label><br>
+                    <textarea name="message" rows="7"
+                    placeholder="Schreib kurz und konkret, worum es geht."
+                    style="width:100%; padding:10px; margin-top:8px;"></textarea>
+                </p>
+
+                <button type="submit">Nachricht absenden</button>
+            </form>
+
+        </div>
+
+        <div class="box">
+            <h3>Direktkontakt</h3>
+            <p>
+                Alternativ per E-Mail:
+            </p>
+            <p>
+                <strong>kontakt@infoldat.de</strong>
+            </p>
+
+            <p class="small">
+                Je klarer die Nachricht, desto besser können wir reagieren.
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- COMMUNITY -->
+<section class="section">
+    <h2>Community-Grundlage</h2>
+
+    <ul>
+        <li>Sachlich & respektvoll</li>
+        <li>Keine Werbung</li>
+        <li>Keine Fake-Infos</li>
+        <li>Hilfe durch Klarheit</li>
+    </ul>
+</section>
+
+<footer>
+    © 2026 Infoldat  
+    <div class="disclaimer">
+        Keine offizielle staatliche oder militärische Website.  
+        Reine Informations- und Vorbereitungsplattform.
+    </div>
+</footer>
+
+</body>
+</html>
