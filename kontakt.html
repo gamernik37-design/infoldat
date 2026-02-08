@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kontakt | Infoldat</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+
+<nav>
+  <a href="index.html">Start</a>
+  <a href="Mission.html">Mission</a>
+  <a href="vorbereitung/index.html">Vorbereitung</a>
+  <a href="tests.html">Tests</a>
+  <a href="kontakt.html">Kontakt</a>
+</nav>
+
+<section class="section">
+  <h1>Kontakt</h1>
+  <p>
+    Schreib uns, wenn du Fragen hast, Fehler gefunden hast
+    oder zur Community beitragen willst.
+  </p>
+</section>
+
+<section class="section">
+  <h2>Kontaktformular</h2>
+
+  <!-- NETLIFY FORM -->
+  <form name="kontakt" method="POST" data-netlify="true">
+    <input type="hidden" name="form-name" value="kontakt">
+
+    <p>
+      <label>Name (optional)</label><br>
+      <input type="text" name="name" placeholder="Dein Name">
+    </p>
+
+    <p>
+      <label>Telefonnummer (optional)</label><br>
+      <input type="tel" name="phone" placeholder="+49 170 1234567">
+    </p>
+
+    <p>
+      <label>Thema</label><br>
+      <select name="thema">
+        <option>Allgemein</option>
+        <option>Ablauf</option>
+        <option>Phasen</option>
+        <option>Ausrüstung</option>
+        <option>Packliste</option>
+        <option>Mental</option>
+        <option>Tests</option>
+        <option>Fehler / Korrektur</option>
+        <option>Idee / Vorschlag</option>
+      </select>
+    </p>
+
+    <p>
+      <label>Nachricht</label><br>
+      <textarea name="message" rows="6" placeholder="Schreib hier deine Nachricht"></textarea>
+    </p>
+
+    <button type="submit">Nachricht absenden</button>
+  </form>
+</section>
+
+<section class="section">
+  <h3>Alternativ</h3>
+  <p>
+    Direkt per E-Mail:<br>
+    <strong>kontakt@infoldat.de</strong>
+  </p>
+</section>
+
+<footer>
+  © 2026 Infoldat<br>
+  <small>Keine offizielle staatliche oder militärische Website.</small>
+</footer>
+
+</body>
+</html>
