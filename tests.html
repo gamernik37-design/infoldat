@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tests | Infoldat</title>
+<link rel="stylesheet" href="assets/css/style.css">
+
+<style>
+/* Nur kleine Hilfsstyles, falls dein style.css nicht alles abdeckt */
+.test-grid { display: grid; gap: 14px; }
+.test-card { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); padding: 16px; border-radius: 10px; }
+.q { margin: 14px 0; padding: 12px; border-radius: 10px; border: 1px solid rgba(255,255,255,0.08); }
+.q h4 { margin: 0 0 8px 0; }
+.choices { display: flex; gap: 10px; flex-wrap: wrap; }
+.choices label { display: inline-flex; gap: 8px; align-items: center; padding: 8px 10px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.12); cursor: pointer; }
+.choices input { accent-color: currentColor; }
+.btn-row { display: flex; gap: 10px; flex-wrap: wrap; }
+button { cursor: pointer; padding: 10px 14px; border-radius: 10px; border: 1px solid rgba(255,255,255,0.18); background: rgba(255,255,255,0.06); color: inherit; }
+button:hover { background: rgba(255,255,255,0.10); }
+.result-box { padding: 14px; border-radius: 10px; border: 1px solid rgba(255,255,255,0.14); }
+.badge { display: inline-block; padding: 4px 10px; border-radius: 999px; border: 1px solid rgba(255,255,255,0.18); font-size: 0.9em; }
+.small { opacity: 0.85; font-size: 0.95em; }
+.rec-list li { margin: 8px 0; }
+hr.soft { border: 0; border-top: 1px solid rgba(255,255,255,0.12); margin: 14px 0; }
+</style>
+</head>
+
+<body>
+
+<nav>
+    <a href="index.html">Start</a>
+    <a href="Mission.html">Mission</a>
+    <a href="vorbereitung/index.html">Vorbereitung</a>
+    <a href="tests.html">Tests</a>
+    <a href="kontakt.html">Kontakt</a>
+</nav>
+
+<section class="hero hero-image">
+    <div class="hero-content">
+        <h1>Tests</h1>
+        <p>
+            Konkrete Selbsteinschätzung mit Auswertung. <br>
+            Danach bekommst du Links zu genau den Vorbereitungsthemen, die du brauchst.
+        </p>
+    </div>
+</section>
+
+<section class="section">
+    <h2>Wie das hier funktioniert</h2>
+    <p>
+        Beantworte die Fragen ehrlich. Jede Antwort wird ausgewertet.
+        Danach bekommst du eine Empfehlung, welche Vorbereitungsthemen du als Nächstes lesen solltest.
+    </p>
+    <p class="small">
+        Hinweis: Es ist kein offizieller Test und keine verbindliche Bewertung – nur Orientierung.
+    </p>
+</section>
+
+<section class="section">
+    <h2>Testfragen</h2>
+
+    <form id="testForm" class="test-grid">
+
+        <!-- ABLAUF -->
+        <div class="test-card">
+            <h3>A) Ablauf (Tagesstruktur & Zeitdruck)</h3>
+
+            <div class="q" data-area="ablauf">
+                <h4>1) Ich kann eine typische Tagesstruktur grob erklären.</h4>
+                <div class="choices">
+                    <label><input type="radio" name="ablauf1" value="2"> Ja</label>
+                    <label><input type="radio" name="ablauf1" value="0"> Nein</label>
+                </div>
+            </div>
+
+            <div class="q" data-area="ablauf">
+                <h4>2) Ich komme klar, wenn Abläufe streng und wiederholend sind.</h4>
+                <div class="choices">
+                    <label><input type="radio" name="ablauf2" value="2"> Ja</label>
+                    <label><input type="radio" name="ablauf2" value="0"> Nein</label>
+                </div>
+            </div>
+
+            <div class="q" data-area="ablauf">
+                <h4>3) Bei Zeitdruck bleibe ich handlungsfähig statt zu blockieren.</h4>
+                <div class="choices">
+                    <label><input type="radio" name="ablauf3" value="2"> Ja</label>
+                    <label><input type="radio" name="ablauf3" value="0"> Nein</label>
+                </div>
+            </div>
+        </div>
+
+        <!-- PHASEN -->
+        <div class="test-card">
+            <h3>B) Phasen (Entwicklung über Wochen)</h3>
+
+            <div class="q" data-area="phasen">
+                <h4>4) Ich verstehe, dass sich Belastung und Struktur je nach Phase verändern.</h4>
+                <div class="choices">
+                    <label><input type="radio" name="phasen1" value="2"> Ja</label>
+                    <label><input type="radio" name="phasen1" value="0"> Nein</label>
+                </div>
+            </div>
+
+            <div class="q" data-area="phasen">
+                <h4>5) Ich kann erklären, warum die Anfangsphase oft am härtesten wirkt.</h4>
+                <div class="choices">
+                    <label><input type="radio" name="phasen2" value="2"> Ja</label>
+                    <label><input type="radio" name="phasen2" value="0"> Nein</label>
+                </div>
+            </div>
+
+            <div class="q" data-area="phasen">
+                <h4>6) Ich kann mich mental darauf einstellen, dass es später „anders“ wird (nicht immer leichter, aber klarer).</h4>
+                <div class="choices">
+                    <label><input type="radio" name="phasen3" value="2"> Ja</label>
+                    <label><input type="radio" name="phasen3" value="0"> Nein</label>
+                </div>
+            </div>
+        </div>
+
+        <!-- AUSRÜSTUNG -->
+        <div class="test-card">
+            <h3>C) Ausrüstung (Ordnung, Pflege, Verantwortung)</h3>
+
+            <div class="q" data-area="ausruestung">
+                <h4>7) Ich halte Ordnung auch ohne Kontrolle.</h4>
+                <div class="choices">
+                    <label><input type="radio" name="aus1" value="2"> Ja</label>
+                    <label><input type="radio" name="aus1" value="0"> Nein</label>
+                </div>
+            </div>
+
+            <div class="q" data-area="ausruestung">
+                <h4>8) Ich erledige Pflege/Checks regelmäßig und nicht erst „wenn’s knapp wird“.</h4>
+                <div class="choices">
+                    <label><input type="radio" name="aus2" value="2"> Ja</label>
+                    <label><input type="radio" name="aus2" value="0"> Nein</label>
+                </div>
+            </div>
+
+            <div class="q" data-area="ausruestung">
+                <h4>9) Ich verstehe, warum Ausrüstung auch „Haltungs-Test“ ist.</h4>
+                <div class="choices">
+                    <label><input type="radio" name="aus3" value="2"> Ja</label>
+                    <label><input type="radio" name="aus3" value="0"> Nein</label>
+                </div>
+            </div>
+        </div>
+
+        <!-- PACKLISTE -->
+        <div class="test-card">
+            <h3>D) Packliste (Sinnvoll vs. stört)</h3>
+
+            <div class="q" data-area="packliste">
+                <h4>10) Ich würde eher funktional packen statt „für Komfort“.</h4>
+                <div class="choices">
+                    <label><input type="radio" name="pack1" value="2"> Ja</label>
+                    <label><input type="radio" name="pack1" value="0"> Nein</label>
+                </div>
+            </div>
+
+            <div class="q" data-area="packliste">
+                <h4>11) Ich habe verstanden, warum zu viel Gepäck Stress erzeugt.</h4>
+                <div class="choices">
+                    <label><input type="radio" name="pack2" value="2"> Ja</label>
+                    <label><input type="radio" name="pack2" value="0"> Nein</label>
+                </div>
+            </div>
+
+            <div class="q" data-area="packliste">
+                <h4>12) Ich kann priorisieren, was wichtig ist (Dokumente/Grundausstattung) und was nicht.</h4>
+                <div class="choices">
+                    <label><input type="radio" name="pack3" value="2"> Ja</label>
+                    <label><input type="radio" name="pack3" value="0"> Nein</label>
+                </div>
+            </div>
+        </div>
+
+        <!-- MENTAL -->
+        <div class="test-card">
+            <h3>E) Mental (Stress, Kritik, Durchhalten)</h3>
+
+            <div class="q" data-area="mental">
+                <h4>13) Ich kann Kritik annehmen, ohne es persönlich zu nehmen.</h4>
+                <div class="choices">
+                    <label><input type="radio" name="men1" value="2"> Ja</label>
+                    <label><input type="radio" name="men1" value="0"> Nein</label>
+                </div>
+            </div>
+
+            <div class="q" data-area="mental">
+                <h4>14) Ich kann auch ohne Motivation zuverlässig arbeiten.</h4>
+                <div class="choices">
+                    <label><input type="radio" name="men2" value="2"> Ja</label>
+                    <label><input type="radio" name="men2" value="0"> Nein</label>
+                </div>
+            </div>
+
+            <div class="q" data-area="mental">
+                <h4>15) Bei Druck bleibe ich ruhig und arbeite Schritt für Schritt.</h4>
+                <div class="choices">
+                    <label><input type="radio" name="men3" value="2"> Ja</label>
+                    <label><input type="radio" name="men3" value="0"> Nein</label>
+                </div>
+            </div>
+        </div>
+
+        <div class="btn-row">
+            <button type="button" id="btnAuswerten">Auswerten</button>
+            <button type="reset" id="btnReset">Zurücksetzen</button>
+        </div>
+
+        <div id="result" class="result-box" style="display:none;">
+            <h3>Ergebnis</h3>
+            <p id="scoreText"></p>
+            <hr class="soft">
+            <h3>Empfehlungen</h3>
+            <ul id="recList" class="rec-list"></ul>
+            <p class="small" id="hintText"></p>
+        </div>
+
+    </form>
+</section>
+
+<footer>
+    © 2026 Infoldat  
+    <div class="disclaimer">
+        Keine offizielle staatliche oder militärische Website.  
+        Reine Informations- und Vorbereitungsplattform.
+    </div>
+</footer>
+
+<script>
+(function () {
+    const btn = document.getElementById('btnAuswerten');
+    const form = document.getElementById('testForm');
+    const resultBox = document.getElementById('result');
+    const scoreText = document.getElementById('scoreText');
+    const recList = document.getElementById('recList');
+    const hintText = document.getElementById('hintText');
+
+    // Max-Punkte: 15 Fragen * 2 = 30
+    const MAX_TOTAL = 30;
+
+    const areaConfig = {
+        ablauf: {
+            title: "Ablauf",
+            link: "vorbereitung/ablauf.html",
+            max: 6
+        },
+        phasen: {
+            title: "Phasen",
+            link: "vorbereitung/phasen.html",
+            max: 6
+        },
+        ausruestung: {
+            title: "Ausrüstung",
+            link: "vorbereitung/ausruestung.html",
+            max: 6
+        },
+        packliste: {
+            title: "Packliste",
+            link: "vorbereitung/packliste.html",
+            max: 6
+        },
+        mental: {
+            title: "Mental",
+            link: "vorbereitung/mental.html",
+            max: 6
+        }
+    };
+
+    function getScore() {
+        const scores = { ablauf: 0, phasen: 0, ausruestung: 0, packliste: 0, mental: 0 };
+        let total = 0;
+
+        // Alle ausgewählten Radios auslesen
+        const checked = form.querySelectorAll('input[type="radio"]:checked');
+        checked.forEach(r => {
+            const q = r.closest('.q');
+            const area = q ? q.getAttribute('data-area') : null;
+            const val = Number(r.value || 0);
+
+            if (area && scores.hasOwnProperty(area)) {
+                scores[area] += val;
+                total += val;
+            }
+        });
+
+        return { scores, total };
+    }
+
+    function allAnswered() {
+        // 15 Gruppen müssen beantwortet sein
+        const names = [
+            "ablauf1","ablauf2","ablauf3",
+            "phasen1","phasen2","phasen3",
+            "aus1","aus2","aus3",
+            "pack1","pack2","pack3",
+            "men1","men2","men3"
+        ];
+
+        return names.every(n => form.querySelector(`input[name="${n}"]:checked`));
+    }
+
+    function levelText(total) {
+        // grobe Skala
+        if (total >= 24) return { label: "stabil", note: "Du hast eine solide Basis. Feinschliff lohnt sich trotzdem." };
+        if (total >= 16) return { label: "mittel", note: "Du bist teilweise vorbereitet – aber es gibt klare Lücken." };
+        return { label: "kritisch", note: "Hier fehlen Grundlagen. Geh die Vorbereitung systematisch durch." };
+    }
+
+    function makeRecItem(areaKey, score) {
+        const cfg = areaConfig[areaKey];
+        const max = cfg.max;
+
+        let text = "";
+        if (score >= 4) text = "ok";
+        else if (score >= 2) text = "unsicher";
+        else text = "Lücke";
+
+        const li = document.createElement('li');
+        li.innerHTML = `<span class="badge">${cfg.title}: ${score}/${max} – ${text}</span> → <a href="${cfg.link}">öffnen</a>`;
+        return li;
+    }
+
+    function buildRecommendations(scores) {
+        recList.innerHTML = "";
+
+        // Sortiere nach niedrigstem Score (damit schwache Bereiche zuerst kommen)
+        const entries = Object.entries(scores).sort((a,b) => a[1] - b[1]);
+
+        entries.forEach(([areaKey, score]) => {
+            recList.appendChild(makeRecItem(areaKey, score));
+        });
+    }
+
+    btn.addEventListener('click', () => {
+        if (!allAnswered()) {
+            alert("Bitte beantworte alle Fragen, bevor du auswertest.");
+            return;
+        }
+
+        const { scores, total } = getScore();
+        const lvl = levelText(total);
+
+        scoreText.innerHTML =
+            `Gesamt: <strong>${total}/${MAX_TOTAL}</strong> → Einschätzung: <strong>${lvl.label}</strong>`;
+
+        buildRecommendations(scores);
+
+        hintText.textContent =
+            lvl.note + " Starte mit dem Bereich ganz oben in der Liste (niedrigster Score).";
+
+        resultBox.style.display = "block";
+        resultBox.scrollIntoView({ behavior: "smooth", block: "start" });
+    });
+
+})();
+</script>
+
+</body>
+</html>
