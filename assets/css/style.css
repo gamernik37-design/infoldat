@@ -1,0 +1,719 @@
+/* =========================
+   INFOLDAT – STYLE v2 (military-clean)
+   ========================= */
+
+/* --------- Design Tokens --------- */
+:root{
+  --bg: #0f1412;              /* tiefes Oliv/Charcoal */
+  --bg-2: #141b17;            /* Panels */
+  --card: rgba(255,255,255,.05);
+  --card-2: rgba(255,255,255,.075);
+  --border: rgba(255,255,255,.12);
+  --border-2: rgba(255,255,255,.18);
+
+  --text: rgba(255,255,255,.92);
+  --text-soft: rgba(255,255,255,.72);
+  --text-dim: rgba(255,255,255,.58);
+
+  --accent: #b6c77a;          /* military khaki */
+  --accent-2: #7fb3a6;        /* muted teal */
+  --danger: #e37c7c;
+
+  --shadow: 0 14px 40px rgba(0,0,0,.42);
+  --shadow-soft: 0 10px 24px rgba(0,0,0,.30);
+
+  --radius: 14px;
+  --radius-sm: 10px;
+
+  --max: 1100px;
+}
+
+/* --------- Base --------- */
+*{ box-sizing: border-box; }
+html,body{ height: 100%; }
+body{
+  margin: 0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  color: var(--text);
+  background:
+    radial-gradient(1100px 700px at 15% 10%, rgba(182,199,122,.10), transparent 60%),
+    radial-gradient(900px 600px at 85% 0%, rgba(127,179,166,.10), transparent 60%),
+    linear-gradient(180deg, var(--bg), #0b0f0d 70%);
+  line-height: 1.55;
+}
+
+a{ color: var(--accent); text-decoration: none; }
+a:hover{ text-decoration: underline; }
+
+img{ max-width: 100%; display: block; }
+hr{
+  border: 0;
+  border-top: 1px solid var(--border);
+  margin: 18px 0;
+}
+
+/* --------- Layout Helpers --------- */
+.section{
+  width: 100%;
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 26px 18px;
+}
+
+.small{ color: var(--text-soft); font-size: .98rem; }
+.muted{ color: var(--text-dim); }
+
+.grid{
+  display: grid;
+  gap: 14px;
+}
+@media (min-width: 840px){
+  .grid{ grid-template-columns: repeat(2, 1fr); }
+}
+@media (min-width: 1100px){
+  .grid.cols-3{ grid-template-columns: repeat(3, 1fr); }
+}
+
+/* --------- Nav --------- */
+nav{
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  background: rgba(15,20,18,.78);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255,255,255,.10);
+  padding: 10px 14px;
+}
+
+nav{
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+nav a{
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 12px;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  color: var(--text-soft);
+  background: rgba(255,255,255,.03);
+  transition: transform .12s ease, background .12s ease, border-color .12s ease;
+}
+
+nav a:hover{
+  background: rgba(255,255,255,.06);
+  border-color: rgba(255,255,255,.12);
+  transform: translateY(-1px);
+  text-decoration: none;
+}
+
+/* Optional: aktiver Link */
+nav a.active{
+  color: var(--text);
+  border-color: rgba(182,199,122,.35);
+  background: rgba(182,199,122,.10);
+}
+
+/* --------- Hero --------- */
+.hero{
+  width: 100%;
+  border-bottom: 1px solid rgba(255,255,255,.08);
+  background:
+    linear-gradient(180deg, rgba(0,0,0,.25), rgba(0,0,0,.55)),
+    radial-gradient(900px 500px at 20% 30%, rgba(182,199,122,.18), transparent 60%),
+    radial-gradient(900px 500px at 80% 20%, rgba(127,179,166,.14), transparent 60%);
+}
+
+.hero-image{
+  min-height: 260px;
+  display: flex;
+  align-items: center;
+}
+
+.hero-content{
+  width: 100%;
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 42px 18px;
+}
+
+.hero h1{
+  margin: 0 0 8px 0;
+  font-size: clamp(1.8rem, 3vw, 2.6rem);
+  letter-spacing: .2px;
+}
+
+.hero p{
+  margin: 0;
+  color: var(--text-soft);
+  max-width: 70ch;
+}
+
+/* --------- Boxes / Cards --------- */
+.box, .test-card, .card{
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 16px;
+  box-shadow: var(--shadow-soft);
+}
+
+.box:hover, .test-card:hover, .card:hover{
+  border-color: rgba(182,199,122,.25);
+  background: var(--card-2);
+}
+
+/* --------- Headings --------- */
+h1,h2,h3{ line-height: 1.2; }
+h2{
+  margin: 0 0 10px 0;
+  font-size: 1.35rem;
+}
+h3{
+  margin: 0 0 8px 0;
+  font-size: 1.12rem;
+}
+
+/* --------- Lists --------- */
+ul,ol{ padding-left: 20px; }
+li{ margin: 6px 0; }
+
+/* --------- Buttons --------- */
+.btn-row{
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+button, .btn{
+  cursor: pointer;
+  padding: 10px 14px;
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,.14);
+  background: rgba(255,255,255,.06);
+  color: var(--text);
+  font-weight: 650;
+  letter-spacing: .2px;
+  transition: transform .12s ease, background .12s ease, border-color .12s ease;
+}
+
+button:hover, .btn:hover{
+  background: rgba(255,255,255,.10);
+  border-color: rgba(255,255,255,.22);
+  transform: translateY(-1px);
+}
+
+button.primary, .btn.primary{
+  background: rgba(182,199,122,.18);
+  border-color: rgba(182,199,122,.35);
+}
+button.primary:hover, .btn.primary:hover{
+  background: rgba(182,199,122,.24);
+}
+
+button:disabled{
+  opacity: .55;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* --------- Forms --------- */
+input, select, textarea{
+  width: 100%;
+  padding: 11px 12px;
+  margin-top: 8px;
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,.14);
+  background: rgba(0,0,0,.22);
+  color: var(--text);
+  outline: none;
+}
+
+input::placeholder, textarea::placeholder{
+  color: rgba(255,255,255,.50);
+}
+
+input:focus, select:focus, textarea:focus{
+  border-color: rgba(182,199,122,.55);
+  box-shadow: 0 0 0 4px rgba(182,199,122,.12);
+}
+
+/* small labels look cleaner */
+label{ color: var(--text-soft); }
+
+/* --------- Test UI (dein existing layout) --------- */
+.test-grid{ display: grid; gap: 14px; }
+.q{
+  margin: 14px 0;
+  padding: 12px;
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,.10);
+  background: rgba(0,0,0,.18);
+}
+.q h4{ margin: 0 0 8px 0; font-size: 1rem; color: var(--text); }
+
+.choices{
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.choices label{
+  display: inline-flex;
+  gap: 8px;
+  align-items: center;
+  padding: 9px 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,.12);
+  background: rgba(255,255,255,.03);
+  cursor: pointer;
+  color: var(--text-soft);
+}
+
+.choices label:hover{
+  border-color: rgba(182,199,122,.35);
+  background: rgba(182,199,122,.08);
+  color: var(--text);
+}
+
+.choices input{ accent-color: var(--accent); }
+
+.result-box{
+  margin-top: 10px;
+  padding: 14px;
+  border-radius: var(--radius);
+  border: 1px solid rgba(255,255,255,.12);
+  background: rgba(0,0,0,.22);
+}
+
+.badge{
+  display: inline-block;
+  padding: 5px 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,.14);
+  background: rgba(255,255,255,.03);
+  font-size: .95em;
+  color: var(--text-soft);
+}
+
+.badge strong{ color: var(--text); }
+
+hr.soft{
+  border: 0;
+  border-top: 1px solid rgba(255,255,255,.12);
+  margin: 14px 0;
+}
+
+/* --------- Footer --------- */
+footer{
+  margin-top: 30px;
+  padding: 22px 18px;
+  border-top: 1px solid rgba(255,255,255,.10);
+  background: rgba(0,0,0,.18);
+  color: var(--text-soft);
+  text-align: center;
+}
+
+footer .disclaimer{
+  margin-top: 8px;
+  color: rgba(255,255,255,.55);
+  font-size: .95rem;
+}
+
+/* --------- Tiny “trust” pill (optional) --------- */
+.pill{
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,.14);
+  background: rgba(255,255,255,.03);
+  color: var(--text-soft);
+}
+
+/* ===== CTA + Social Bar (global) ===== */
+.cta-bar{
+  width: 100%;
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 0 18px 22px 18px;
+}
+
+.cta-inner{
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px;
+  border-radius: var(--radius);
+  border: 1px solid rgba(255,255,255,.12);
+  background: rgba(0,0,0,.22);
+}
+
+.cta-inner .left{
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.cta-inner .right{
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.social-bar{
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.social-bar a{
+  display: inline-flex;
+  align-items: center;
+  padding: 9px 12px;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,.14);
+  background: rgba(255,255,255,.03);
+  color: var(--text-soft);
+  text-decoration: none;
+}
+.social-bar a:hover{
+  border-color: rgba(182,199,122,.35);
+  background: rgba(182,199,122,.08);
+  color: var(--text);
+}
+
+/* =========================
+   INFOLDAT THEME UPGRADE
+   (unten in style.css)
+========================= */
+
+/* 1) Base + Colors */
+:root{
+  --bg: #0b0f0c;
+  --panel: rgba(255,255,255,.04);
+  --panel2: rgba(0,0,0,.28);
+  --border: rgba(255,255,255,.10);
+
+  --text: rgba(255,255,255,.92);
+  --text-soft: rgba(255,255,255,.72);
+
+  /* Military accents */
+  --acc: #b6c77a;     /* olive */
+  --acc2:#6ea8a0;     /* muted teal */
+  --danger:#d96b6b;
+
+  --radius: 14px;
+  --max: 1120px;
+}
+
+html,body{ background: var(--bg); color: var(--text); }
+body{ line-height: 1.55; }
+
+/* 2) Typography */
+h1,h2,h3{ letter-spacing: .2px; }
+h1{ font-size: clamp(30px, 4vw, 46px); }
+h2{ font-size: clamp(22px, 2.6vw, 30px); }
+p,li{ color: var(--text-soft); }
+
+/* 3) Layout container */
+.section{
+  width: 100%;
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 28px 18px;
+}
+
+/* 4) Nav */
+nav{
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+
+  padding: 12px 14px;
+  border-bottom: 1px solid var(--border);
+  background: rgba(10,14,11,.78);
+  backdrop-filter: blur(10px);
+}
+nav a{
+  text-decoration: none;
+  color: var(--text-soft);
+  padding: 8px 12px;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,.08);
+  background: rgba(255,255,255,.02);
+}
+nav a:hover{
+  color: var(--text);
+  border-color: rgba(182,199,122,.35);
+  background: rgba(182,199,122,.10);
+}
+
+/* 5) Hero (clean + depth) */
+.hero{
+  width: 100%;
+  padding: 62px 18px 46px 18px;
+  border-bottom: 1px solid var(--border);
+  background:
+    radial-gradient(900px 400px at 20% 0%, rgba(182,199,122,.12), transparent 60%),
+    radial-gradient(700px 300px at 90% 10%, rgba(110,168,160,.10), transparent 60%),
+    linear-gradient(to bottom, rgba(255,255,255,.02), transparent 55%);
+}
+.hero .hero-content{
+  max-width: var(--max);
+  margin: 0 auto;
+}
+.hero p{ max-width: 70ch; }
+
+/* 6) Grid + Box */
+.grid{
+  display: grid;
+  gap: 14px;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+.box{
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 16px;
+  box-shadow: 0 18px 40px rgba(0,0,0,.35);
+}
+.box h3{ color: var(--text); margin-top: 0; }
+
+/* 7) Buttons + links */
+a{ color: var(--acc); }
+a:hover{ color: #d3e39a; }
+
+.btn, button{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  padding: 10px 14px;
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,.12);
+  background: rgba(255,255,255,.04);
+  color: var(--text);
+  text-decoration: none;
+  cursor: pointer;
+}
+.btn:hover, button:hover{
+  background: rgba(255,255,255,.07);
+  border-color: rgba(182,199,122,.30);
+}
+.btn.primary{
+  background: rgba(182,199,122,.12);
+  border-color: rgba(182,199,122,.35);
+}
+.btn.primary:hover{
+  background: rgba(182,199,122,.18);
+}
+
+/* 8) Pills / badges */
+.pill, .badge{
+  display: inline-block;
+  padding: 5px 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(182,199,122,.28);
+  background: rgba(182,199,122,.08);
+  color: var(--text);
+  font-size: .92em;
+}
+.small{ font-size: .95em; opacity: .9; }
+
+/* 9) Forms (global) */
+input, select, textarea{
+  width: 100%;
+  padding: 11px 12px;
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,.12);
+  background: rgba(0,0,0,.25);
+  color: var(--text);
+  outline: none;
+}
+input:focus, select:focus, textarea:focus{
+  border-color: rgba(182,199,122,.45);
+  box-shadow: 0 0 0 3px rgba(182,199,122,.12);
+}
+
+/* 10) Footer */
+footer{
+  border-top: 1px solid var(--border);
+  padding: 22px 18px;
+  text-align: center;
+  color: var(--text-soft);
+  background: rgba(0,0,0,.18);
+}
+
+/* 11) CTA / Social (falls du’s schon drin hast: passt optisch dazu) */
+.cta-inner{
+  background: var(--panel2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+.social-bar a{ background: rgba(255,255,255,.03); }
+
+/* ===== CTA Upgrade ===== */
+.cta-wrap{
+  display: grid;
+  gap: 16px;
+  grid-template-columns: 1.4fr .9fr;
+  align-items: start;
+}
+@media (max-width: 900px){
+  .cta-wrap{ grid-template-columns: 1fr; }
+}
+
+.cta-left, .cta-right{
+  background: rgba(255,255,255,.035);
+  border: 1px solid rgba(255,255,255,.10);
+  border-radius: var(--radius);
+  padding: 18px;
+}
+
+.cta-actions{
+  display:flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin: 14px 0 10px 0;
+}
+
+.trust-row{
+  display:flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+.trust-item{
+  padding: 8px 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,.10);
+  background: rgba(0,0,0,.22);
+  color: var(--text-soft);
+}
+.trust-item strong{ color: var(--acc); margin-right: 6px; }
+
+.social-row{
+  display:flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 12px;
+}
+.social{
+  padding: 8px 12px;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,.10);
+  background: rgba(255,255,255,.03);
+  color: var(--text);
+  text-decoration:none;
+}
+.social:hover{
+  border-color: rgba(182,199,122,.35);
+  background: rgba(182,199,122,.10);
+}
+
+.mini-card{
+  background: rgba(0,0,0,.20);
+  border: 1px solid rgba(255,255,255,.10);
+  border-radius: var(--radius);
+  padding: 14px;
+  margin-bottom: 12px;
+}
+.mini-steps, .mini-list{
+  margin: 10px 0 0 18px;
+  color: var(--text-soft);
+}
+
+.checkbox-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 16px;
+}
+
+.checkbox-row input[type="checkbox"] {
+  margin: 0;
+  transform: translateY(1px);
+}
+
+.checkbox-row label {
+  line-height: 1.4;
+  cursor: pointer;
+}
+
+.consent-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-top: 18px;
+}
+
+.consent-row input[type="checkbox"] {
+  margin-top: 4px;
+  cursor: pointer;
+}
+
+.consent-row label {
+  line-height: 1.4;
+  cursor: pointer;
+  color: var(--text-soft);
+}
+
+/* =========================
+   CONSENT / CHECKBOX FIX
+   (Override – last wins)
+   ========================= */
+
+/* Prevent global input styles from breaking checkboxes */
+input[type="checkbox"]{
+  width: auto !important;
+  height: auto !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  accent-color: var(--accent);
+}
+
+/* Consent row layout */
+.consent-row{
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-top: 18px;
+}
+
+/* Checkbox positioning */
+.consent-row input[type="checkbox"]{
+  margin-top: 4px !important;
+  flex-shrink: 0;
+  cursor: pointer;
+}
+
+/* Text next to checkbox */
+.consent-row label{
+  margin: 0 !important;
+  padding: 0 !important;
+  line-height: 1.45;
+  cursor: pointer;
+  color: var(--text-soft);
+}

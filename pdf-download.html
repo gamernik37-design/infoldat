@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kostenlose PDF | Infoldat</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+
+<nav>
+  <a href="index.html">Start</a>
+  <a href="steuerthemen.html">Steuerthemen</a>
+  <a href="zuschuesse.html">Zuschüsse & Förderungen</a>
+  <a href="pdf.html">Kostenlose PDF</a>
+  <a href="kontakt.html">Kontakt / Einschreiben</a>
+</nav>
+
+<section class="hero hero-image">
+  <div class="hero-content">
+    <h1>Kostenlose PDF</h1>
+    <p>Eintragen → Download freischalten (quick & easy).</p>
+  </div>
+</section>
+
+<section class="section">
+  <h2>PDF-Download nach Anmeldung</h2>
+  <p class="small">
+    Trag dich ein, dann wirst du direkt zur Download-Seite weitergeleitet.
+  </p>
+
+  <div class="grid">
+    <div class="box">
+
+      <!-- NETLIFY FORM (WICHTIG) -->
+      <form name="pdf-download" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" action="/pdf-download.html">
+        <input type="hidden" name="form-name" value="pdf-download" />
+
+        <!-- Honeypot (Spam) -->
+        <p style="display:none;">
+          <label>Don’t fill this out: <input name="bot-field" /></label>
+        </p>
+
+        <p>
+          <label><strong>E-Mail (Pflicht)</strong></label><br />
+          <input type="email" name="email" required placeholder="name@mail.de" style="width:100%; padding:10px; margin-top:8px;">
+        </p>
+
+        <p>
+          <label><strong>Name (optional)</strong></label><br />
+          <input type="text" name="name" placeholder="Dein Name" style="width:100%; padding:10px; margin-top:8px;">
+        </p>
+
+        <p>
+          <label><strong>Bezug (optional)</strong></label><br />
+          <select name="bezug" style="width:100%; padding:10px; margin-top:8px;">
+            <option value="Bundeswehr">Bundeswehr</option>
+            <option value="Öffentlicher Dienst">Öffentlicher Dienst</option>
+            <option value="Sicherheitsnah">Sicherheitsnah</option>
+            <option value="Interessiert">Allgemein interessiert</option>
+          </select>
+        </p>
+
+        <button type="submit">Jetzt eintragen & PDF holen</button>
+
+        <p class="small" style="margin-top:10px;">
+          Hinweis: Kein offizielles Angebot staatlicher Stellen. Wir geben keine Steuerberatung, sondern Struktur & Orientierung.
+        </p>
+      </form>
+
+    </div>
+
+    <div class="box">
+      <h3>Was du bekommst</h3>
+      <ul>
+        <li>Checkliste: typische Steuer-Hebel</li>
+        <li>Dokumente/Belege: was sammeln?</li>
+        <li>Mini-Guide: Zuschüsse & Förderungen</li>
+      </ul>
+      <p class="small">
+        Für Leute mit Bezug zur Bundeswehr/ÖD oft besonders relevant (Versetzung, Lehrgang, Auswärtstätigkeit etc.).
+      </p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  © 2026 Infoldat
+  <div class="disclaimer">Keine offizielle Website. Informationsplattform.</div>
+</footer>
+
+</body>
+</html>

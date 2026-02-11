@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kostenlose PDF | Infoldat</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+
+<body>
+
+<nav>
+  <a href="index.html">Start</a>
+  <a href="steuerthemen.html">Steuerthemen</a>
+  <a href="zuschuesse.html">Zuschüsse & Förderungen</a>
+  <a href="pdf.html" class="active">Kostenlose PDF</a>
+  <a href="kontakt.html">Kontakt / Einschreiben</a>
+</nav>
+
+<section class="hero hero-image">
+  <div class="hero-content">
+    <span class="pill">Kostenlose PDFs</span>
+    <h1>Gratis Startpaket: Checklisten & Struktur</h1>
+    <p>
+      Erst anmelden – danach bekommst du den Download. So bleiben die PDFs sauber verteilt
+      und du bekommst Updates, wenn wir Inhalte erweitern.
+    </p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="grid">
+    <div class="box">
+      <h2>Was ist drin?</h2>
+      <ul>
+        <li><strong>Start-Plan</strong>: Was zuerst prüfen (BW/ÖD Fokus)</li>
+        <li><strong>Beleg-System</strong>: Ordnerstruktur + Notiz-Regel</li>
+        <li><strong>Checklisten</strong>: Lehrgang/Auswärtstätigkeit, Umzug, Zweitort, Fortbildung</li>
+      </ul>
+      <p class="small muted">
+        Hinweis: Inhalte sind Info/Struktur – keine Steuerberatung.
+      </p>
+    </div>
+
+    <div class="box">
+      <h2>Für wen?</h2>
+      <ul>
+        <li>Bundeswehr (Lehrgänge, Standortwechsel, Auswärtstätigkeit)</li>
+        <li>Öffentlicher Dienst (Abordnung, Versetzung, Fortbildung)</li>
+        <li>Sicherheitsnahe Berufe (Schicht/Wechsel/unterwegs)</li>
+        <li>Alle, die Steuern & Förderungen klar strukturieren wollen</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- Gated Area -->
+<section class="section" id="gate">
+  <div class="grid">
+    <!-- Signup -->
+    <div class="box" id="signupBox">
+      <h2>Anmelden für den Download</h2>
+      <p class="small">
+        Nach dem Absenden wirst du direkt zurück auf diese Seite geleitet – dann erscheint der Download-Button.
+      </p>
+
+      <!-- Netlify Form -->
+      <form name="pdf-access" method="POST" data-netlify="true" action="pdf.html?done=1">
+        <input type="hidden" name="form-name" value="pdf-access">
+
+        <p>
+          <label><strong>E-Mail</strong></label><br>
+          <input type="email" name="email" placeholder="deinname@email.de" required>
+        </p>
+
+        <p>
+          <label><strong>Zielgruppe</strong></label><br>
+          <select name="zielgruppe" required>
+            <option value="" disabled selected>Bitte auswählen…</option>
+            <option>Bundeswehr</option>
+            <option>Öffentlicher Dienst</option>
+            <option>Sicherheitsnaher Beruf</option>
+            <option>Allgemein interessiert</option>
+          </select>
+        </p>
+
+        <div class="consent-row">
+          <input id="consent-pdf" type="checkbox" name="consent" required>
+          <label for="consent-pdf">
+            Ja, ich will das Infoldat mich per E-Mail informiert (PDF + Updates). Abmeldung jederzeit.
+          </label>
+        </div>
+
+        <div class="btn-row" style="margin-top:14px;">
+          <button class="primary" type="submit">Jetzt anmelden</button>
+          <a class="btn" href="kontakt.html">Kontakt / Einschreiben</a>
+        </div>
+
+        <p class="small muted" style="margin-top:10px;">
+          Wir schicken keinen Spam. Die Anmeldung ist nur, damit du Zugriff bekommst und Updates erhältst.
+        </p>
+      </form>
+    </div>
+
+    <!-- Download -->
+    <div class="box" id="downloadBox" style="display:none;">
+      <h2>Danke! Download ist freigeschaltet ✅</h2>
+      <p>
+        Hier ist dein Startpaket. Wenn der Download nicht startet, öffne den Link in einem neuen Tab.
+      </p>
+
+      <!-- HIER MUSS DIE DATEI EXISTIEREN -->
+      <div class="btn-row" style="margin-top:12px;">
+        <a class="btn primary" href="assets/pdfs/infoldat-startpaket.pdf" download>PDF herunterladen</a>
+        <a class="btn" href="steuerthemen.html">Zu Steuerthemen →</a>
+        <a class="btn" href="zuschuesse.html">Zu Zuschüssen →</a>
+      </div>
+
+      <hr class="soft">
+
+      <h3>Next steps</h3>
+      <ol>
+        <li>PDF öffnen und den Start-Plan abarbeiten</li>
+        <li>Beleg-System einrichten</li>
+        <li>Dein Hauptthema auswählen (Lehrgang/Umzug/Zweitort)</li>
+      </ol>
+
+      <p class="small muted">
+        Tipp: Speichere die PDF direkt offline ab – dann hast du sie immer bereit.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="cta-inner">
+    <div class="left">
+      <span class="pill">Checklisten</span>
+      <span class="pill">BW/ÖD Fokus</span>
+      <span class="pill">Struktur</span>
+    </div>
+    <div class="right">
+      <a class="btn primary" href="kontakt.html">Frage stellen / Einschreiben</a>
+      <a class="btn" href="index.html">Zur Startseite →</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  © 2026 Infoldat
+  <div class="disclaimer">
+    Keine offizielle staatliche Website. Reine Informations- und Strukturplattform (keine Steuerberatung).
+  </div>
+</footer>
+
+<script>
+  // Show download box only after successful redirect (?done=1)
+  (function(){
+    const params = new URLSearchParams(window.location.search);
+    const done = params.get("done");
+
+    const signup = document.getElementById("signupBox");
+    const dl = document.getElementById("downloadBox");
+
+    if(done === "1"){
+      if(signup) signup.style.display = "none";
+      if(dl) dl.style.display = "block";
+      // optional: scroll to download
+      dl.scrollIntoView({behavior:"smooth", block:"start"});
+    }
+  })();
+</script>
+
+</body>
+</html>
